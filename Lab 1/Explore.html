@@ -10,17 +10,28 @@
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
   <!-- ✅ Navbar -->
-  <header class="bg-white shadow-md fixed w-full top-0 z-50">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+  <header class="bg-white shadow-md fixed w-full top-0 z-50 backdrop-blur-md">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
       <h1 class="text-2xl font-bold text-green-600">📚 Book Explorer</h1>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
-        <li><a href="explore.html" class="text-green-600 font-semibold">Explore</a></li>
-        <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
+      <ul id="nav-links" class="hidden md:flex space-x-6">
+        <li><a href="Index.html" class="hover:text-green-500 transition">Home</a></li>
+        <li><a href="favorites.html" class="hover:text-green-500 transition">Favorite</a></li>
+        <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+
+        <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+        <li><a href="contact.html"class="hover:text-green-500 transition">Contact</a></li>
+
       </ul>
-      <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
     </nav>
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-4 pb-4 bg-white shadow">
+     <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
+  <li><a href="favorites.html" class="hover:text-green-500 transition">Favorites</a></li>
+  <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+  <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+  <li><a href="contact.html"class="hover:text-green-500 transition">Contact</a></li>
+    </ul>
   </header>
 
   <!-- ✅ Hero Section -->

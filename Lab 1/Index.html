@@ -15,8 +15,9 @@
       <ul id="nav-links" class="hidden md:flex space-x-6">
         <li><a href="#" class="hover:text-green-500 transition">Home</a></li>
         <li><a href="favorites.html" class="hover:text-green-500 transition">Favorite</a></li>
-        <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
         <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+        <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+        
         <li><a href="contact.html"class="hover:text-green-500 transition">Contact</a></li>
 
       </ul>
@@ -267,15 +268,50 @@
       </div>
     </div>
   </section>
+  <!-- footer -->
 
-  <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-6 mt-12">
-    <div class="max-w-6xl mx-auto text-center">
-      <p>📚 Book Explorer &copy; 2025 | Built with Grace using HTML, Tailwind & Js</p>
-      <p class="text-sm mt-2">Follow us on 
-        <a href="#" class="text-blue-400 hover:underline">Twitter</a> & 
-        <a href="https://github.com/graceniyigena34" class="text-blue-400 hover:underline">GitHub</a>&
-        <a href="https://web.facebook.com/home.php"  class="text-blue-400 hover:underline">Facebook</a>
-      </p>
+<footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+
+    <!-- Top Section: Brand & Links -->
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-8 md:space-y-0">
+      
+      <!-- Brand -->
+      <div class="md:flex-1">
+        <h2 class="text-2xl sm:text-3xl font-bold text-green-500 mb-2">📚 Book Explorer</h2>
+        <p class="text-gray-400 sm:text-base">Discover, explore, and track your favorite books. Start your reading journey today!</p>
+      </div>
+      
+      <!-- Pages & Social -->
+      <div class="flex flex-col sm:flex-row gap-8 md:gap-12 text-center md:text-left">
+
+        <!-- Pages -->
+        <div>
+          <h3 class="font-semibold mb-2 text-white">Pages</h3>
+          <ul class="space-y-1">
+            <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
+            <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+            <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+            <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="font-semibold mb-2 text-white">Follow Us</h3>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="https://x.com/" class="text-blue-400 hover:text-blue-500 transition">Twitter</a>
+            <a href="https://github.com/" class="text-gray-400 hover:text-white transition">GitHub</a>
+            <a href="https://web.facebook.com/home.php" class="text-blue-600 hover:text-blue-700 transition">Facebook</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Bottom Section: Copyright -->
+    <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm sm:text-base">
+      &copy; 2025 Book Explorer. All rights reserved.
+    </div>
+
+  </div>
+</footer>

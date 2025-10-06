@@ -10,29 +10,37 @@
 
   <!-- Navbar -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50 backdrop-blur-md">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
-      <h1 class="text-2xl font-bold text-green-600">📚 Book Explorer</h1>
-      <ul id="nav-links" class="hidden md:flex space-x-6">
-        <li><a href="#" class="hover:text-green-500 transition">Home</a></li>
-        <li><a href="favorites.html" class="hover:text-green-500 transition">Favorite</a></li>
-        <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
-        <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
-        
-        <li><a href="contact.html"class="hover:text-green-500 transition">Contact</a></li>
+  <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold text-green-600">📚 Book Explorer</h1>
 
+    <!-- Mobile Menu Toggle -->
+    <div class="md:hidden">
+      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+      <label for="menu-toggle" class="text-2xl cursor-pointer select-none">☰</label>
+
+      <!-- Mobile Menu -->
+      <ul class="peer-checked:flex hidden flex-col space-y-2 absolute top-full left-0 w-full bg-white shadow-lg px-4 py-4">
+        <li><a href="index.html" class="hover:text-green-500 transition block py-2">Home</a></li>
+        <li><a href="favorites.html" class="hover:text-green-500 transition block py-2">Favorites</a></li>
+        <li><a href="about.html" class="hover:text-green-500 transition block py-2">About</a></li>
+        <li><a href="explore.html" class="hover:text-green-500 transition block py-2">Explore</a></li>
+        <li><a href="contact.html" class="hover:text-green-500 transition block py-2">Contact</a></li>
       </ul>
-      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
-    </nav>
-    <!-- Mobile Menu -->
-    <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-4 pb-4 bg-white shadow">
-     <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
-  <li><a href="favorites.html" class="hover:text-green-500 transition">Favorites</a></li>
-  <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
-  <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
-  
-  <li><a href="contact.html"class="hover:text-green-500 transition">Contact</a></li>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#" class="hover:text-green-500 transition">Home</a></li>
+      <li><a href="favorites.html" class="hover:text-green-500 transition">Favorite</a></li>
+      <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+      <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+      <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
     </ul>
-  </header>
+  </nav>
+</header>
+
+
 
   <!-- Hero Section with Search -->
   <section class="pt-28 pb-16 relative bg-[url('./Image1.jpg')] bg-cover bg-center text-white text-center min-h-[80vh] flex items-center justify-center rounded-lg shadow-lg overflow-hidden">

@@ -9,37 +9,34 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
+ <!-- Navbar -->
   <!-- Navbar -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50 backdrop-blur-md">
-  <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
-    <!-- Logo -->
-    <h1 class="text-2xl font-bold text-green-600">📚 Book Explorer</h1>
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8 py-4">
+      <h1 class="text-2xl sm:text-3xl font-bold text-green-600">📚 Book Explorer</h1>
 
-    <!-- Mobile Menu Toggle -->
-    <div class="md:hidden">
-      <input type="checkbox" id="menu-toggle" class="peer hidden" />
-      <label for="menu-toggle" class="text-2xl cursor-pointer select-none">☰</label>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-4 lg:space-x-6 text-sm sm:text-base">
+        <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
+        <li><a href="favorites.html" class="hover:text-green-500 transition">Favorites</a></li>
+        <li><a href="about.html" class="text-green-600 font-semibold transition">About</a></li>
+        <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+        <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
+      </ul>
 
       <!-- Mobile Menu -->
-      <ul class="peer-checked:flex hidden flex-col space-y-2 absolute top-full left-0 w-full bg-white shadow-lg px-4 py-4">
-        <li><a href="index.html" class="hover:text-green-500 transition block py-2">Home</a></li>
-        <li><a href="favorites.html" class="hover:text-green-500 transition block py-2">Favorites</a></li>
-        <li><a href="about.html" class="hover:text-green-500 transition block py-2">About</a></li>
-        <li><a href="explore.html" class="hover:text-green-500 transition block py-2">Explore</a></li>
-        <li><a href="contact.html" class="hover:text-green-500 transition block py-2">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex space-x-6">
-      <li><a href="#" class="hover:text-green-500 transition">Home</a></li>
-      <li><a href="favorites.html" class="hover:text-green-500 transition">Favorite</a></li>
-      <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
-      <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
-      <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      <details class="md:hidden">
+        <summary class="cursor-pointer text-2xl select-none">☰</summary>
+        <ul class="flex flex-col space-y-2 mt-2 bg-white shadow-lg p-4 rounded-lg">
+          <li><a href="index.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Home</a></li>
+          <li><a href="favorites.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Favorites</a></li>
+          <li><a href="about.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">About</a></li>
+          <li><a href="explore.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Explore</a></li>
+          <li><a href="contact.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
 
 
   <!-- ✅ Hero Section -->

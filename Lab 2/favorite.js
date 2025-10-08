@@ -21,6 +21,7 @@
       img: "https://covers.openlibrary.org/b/id/8254151-L.jpg",
       link: "https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280"
     },
+<<<<<<< Updated upstream
     {
       title: "Artificial Intelligence",
       author: "Stuart Russell, Peter Norvig",
@@ -40,6 +41,11 @@
       img: "https://covers.openlibrary.org/b/id/8271991-L.jpg",
       link: "#"
     },
+=======
+   
+    
+   
+>>>>>>> Stashed changes
 
   ];
 

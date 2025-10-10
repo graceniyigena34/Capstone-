@@ -8,86 +8,123 @@
 </head>
 <body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
 
- <!-- Navbar -->
+  <!-- Navbar -->
   <header class="bg-white shadow-md fixed w-full top-0 z-50 backdrop-blur-md">
-    <nav class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8 py-4">
-      <h1 class="text-2xl sm:text-3xl font-bold text-green-600">📚 Book Explorer</h1>
-
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex space-x-4 lg:space-x-6 text-sm sm:text-base">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+      <h1 class="text-2xl font-bold text-green-600">📚 Book Explorer</h1>
+      <div class="md:hidden">
+        <input type="checkbox" id="menu-toggle" class="peer hidden" />
+        <label for="menu-toggle" class="text-2xl cursor-pointer select-none">☰</label>
+        <ul class="peer-checked:flex hidden flex-col space-y-2 absolute top-full left-0 w-full bg-white shadow-lg px-4 py-4">
+          <li><a href="index.html" class="hover:text-green-500 transition block py-2">Home</a></li>
+          <li><a href="favorites.html" class="hover:text-green-500 transition block py-2">Favorites</a></li>
+          <li><a href="about.html" class="hover:text-green-500 transition block py-2">About</a></li>
+          <li><a href="explore.html" class="hover:text-green-500 transition block py-2">Explore</a></li>
+          <li><a href="contact.html" class="hover:text-green-500 transition block py-2">Contact</a></li>
+        </ul>
+      </div>
+      <ul class="hidden md:flex space-x-6">
         <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
-        <li><a href="favorites.html" class="hover:text-green-500 transition">Favorites</a></li>
+        <li><a href="favorites.html" class="hover:text-green-500 transition font-bold text-green-600">Favorite</a></li>
         <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
         <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
         <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
       </ul>
-
-      <!-- Mobile Menu -->
-      <details class="md:hidden">
-        <summary class="cursor-pointer text-2xl select-none">☰</summary>
-        <ul class="flex flex-col space-y-2 mt-2 bg-white shadow-lg p-4 rounded-lg">
-          <li><a href="index.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Home</a></li>
-          <li><a href="favorites.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Favorites</a></li>
-          <li><a href="about.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">About</a></li>
-          <li><a href="explore.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Explore</a></li>
-          <li><a href="contact.html" class="block py-2 px-3 rounded hover:bg-green-100 transition">Contact</a></li>
-        </ul>
-      </details>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="pt-28 pb-12 bg-green-600 text-white text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4">Your Favorite Books</h2>
-    <p class="text-base md:text-lg" id="favorites-hero-msg">Loading your favorite books...</p>
-    <a href="explore.html" class="mt-6 inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">
-      Explore Books
-    </a>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Your Favorite Books</h2>
+    <p class="text-base sm:text-lg md:text-xl mb-6">All the books you have saved will appear here. Keep track of your reading journey!</p>
+    <a href="index.html" class="bg-white text-green-600 font-semibold px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition">Back to Home</a>
   </section>
 
-  <!-- Favorites Grid -->
-  <section class="flex-1 py-16 px-4 md:px-12">
-    <div id="favorites-container" class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Favorites will be injected here -->
+  <!-- Favorites List -->
+  <section class="py-16 mx-4 md:mx-12">
+    <div id="favoritesContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Favorite books will be injected here -->
     </div>
   </section>
 
- <!-- footer -->
-<footer class="bg-gray-900 text-gray-300 py-12 mt-12">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-8 md:space-y-0">
-      <div class="md:flex-1">
-        <h2 class="text-2xl sm:text-3xl font-bold text-green-500 mb-2">📚 Book Explorer</h2>
-        <p class="text-gray-400 sm:text-base">Discover, explore, and track your favorite books. Start your reading journey today!</p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-8 md:gap-12 text-center md:text-left">
-        <div>
-          <h3 class="font-semibold mb-2 text-white">Pages</h3>
-          <ul class="space-y-1">
-            <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
-            <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
-            <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
-            <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
-          </ul>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left space-y-8 md:space-y-0">
+        <div class="md:flex-1">
+          <h2 class="text-2xl sm:text-3xl font-bold text-green-500 mb-2">📚 Book Explorer</h2>
+          <p class="text-gray-400 sm:text-base">Discover, explore, and track your favorite books. Start your reading journey today!</p>
         </div>
-        <div>
-          <h3 class="font-semibold mb-2 text-white">Follow Us</h3>
-          <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href="https://x.com/" class="text-blue-400 hover:text-blue-500 transition">Twitter</a>
-            <a href="https://github.com/" class="text-gray-400 hover:text-white transition">GitHub</a>
-            <a href="https://web.facebook.com/home.php" class="text-blue-600 hover:text-blue-700 transition">Facebook</a>
+        <div class="flex flex-col sm:flex-row gap-8 md:gap-12 text-center md:text-left">
+          <div>
+            <h3 class="font-semibold mb-2 text-white">Pages</h3>
+            <ul class="space-y-1">
+              <li><a href="index.html" class="hover:text-green-500 transition">Home</a></li>
+              <li><a href="explore.html" class="hover:text-green-500 transition">Explore</a></li>
+              <li><a href="about.html" class="hover:text-green-500 transition">About</a></li>
+              <li><a href="contact.html" class="hover:text-green-500 transition">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2 text-white">Follow Us</h3>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <a href="https://x.com/" class="text-blue-400 hover:text-blue-500 transition">Twitter</a>
+              <a href="https://github.com/" class="text-gray-400 hover:text-white transition">GitHub</a>
+              <a href="https://web.facebook.com/home.php" class="text-blue-600 hover:text-blue-700 transition">Facebook</a>
+            </div>
           </div>
         </div>
       </div>
+      <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm sm:text-base">
+        &copy; 2025 Book Explorer. All rights reserved.
+      </div>
     </div>
-    <div class="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm sm:text-base">
-      &copy; 2025 Book Explorer. All rights reserved.
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- JavaScript to Load Favorites -->
-<script src="favorite.js"></script>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const favoritesContainer = document.getElementById("favoritesContainer");
+
+      // Get favorite books from localStorage
+      const favoriteBooks = JSON.parse(localStorage.getItem("favoriteBooks")) || [];
+
+      if (favoriteBooks.length === 0) {
+        favoritesContainer.innerHTML = `<p class="text-gray-600 col-span-full text-center">You have no favorite books yet.</p>`;
+        return;
+      }
+
+      // Display favorite books
+      favoriteBooks.forEach(book => {
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("bg-white", "rounded-lg", "shadow-md", "overflow-hidden");
+
+        bookCard.innerHTML = `
+          <img src="${book.cover || 'placeholder.jpg'}" alt="${book.title}" class="w-full h-64 object-cover">
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">${book.title}</h3>
+            <p class="text-gray-600 mb-2">${book.author}</p>
+            <button class="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded mt-2 w-full remove-btn">Remove</button>
+          </div>
+        `;
+
+        // Remove from favorites
+        bookCard.querySelector(".remove-btn").addEventListener("click", () => {
+          const index = favoriteBooks.findIndex(b => b.id === book.id);
+          if (index > -1) {
+            favoriteBooks.splice(index, 1);
+            localStorage.setItem("favoriteBooks", JSON.stringify(favoriteBooks));
+            bookCard.remove();
+            if (favoriteBooks.length === 0) {
+              favoritesContainer.innerHTML = `<p class="text-gray-600 col-span-full text-center">You have no favorite books yet.</p>`;
+            }
+          }
+        });
+
+        favoritesContainer.appendChild(bookCard);
+      });
+    });
+  </script>
 
 </body>
 </html>

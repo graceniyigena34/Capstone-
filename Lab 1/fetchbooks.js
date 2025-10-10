@@ -1,71 +1,84 @@
+// fetchbooks.js
+// This script fetches books from Open Library API and displays them on the homepage
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const searchBtn = document.getElementById("searchBtn");
-  const booksContainer = document.getElementById("booksContainer");
+  const popularBooksSection = document.querySelector("section.py-16"); // Popular Books section
 
   // Function to fetch books from Open Library API
   async function fetchBooks(query) {
-    booksContainer.innerHTML = `<p class="col-span-full text-center text-gray-700 text-xl">Loading...</p>`;
+    // Clear previous results
+    popularBooksSection.innerHTML = `<p class="text-center col-span-full text-gray-600">Loading...</p>`;
+
     try {
       const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=12`);
-      const data = await response.json();
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-      if (!data.docs || data.docs.length === 0) {
-        booksContainer.innerHTML = `<p class="col-span-full text-center text-red-500 text-xl">❌ No books found</p>`;
+      const data = await response.json();
+      const books = data.docs;
+
+      if (books.length === 0) {
+        popularBooksSection.innerHTML = `<p class="text-center col-span-full text-gray-600">No books found.</p>`;
         return;
       }
 
-      // Display books
-      booksContainer.innerHTML = "";
-      data.docs.forEach(book => {
-        const cover = book.cover_i
+      // Clear the section
+      popularBooksSection.innerHTML = "";
+      popularBooksSection.classList.add("grid", "grid-cols-1", "sm:grid-cols-2", "md:grid-cols-3", "lg:grid-cols-4", "gap-6");
+
+      books.forEach(book => {
+        const bookCard = document.createElement("div");
+        bookCard.classList.add("bg-white", "rounded-lg", "shadow-md", "overflow-hidden");
+
+        const coverUrl = book.cover_i
           ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
-          : "https://via.placeholder.com/150x220?text=No+Cover";
+          : "placeholder.jpg";
 
         const author = book.author_name ? book.author_name.join(", ") : "Unknown Author";
-        const year = book.first_publish_year || "N/A";
 
-        const card = document.createElement("div");
-        card.className = "book-card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition transform hover:scale-105 relative";
-
-        card.innerHTML = `
-          <img src="${cover}" alt="${book.title}" class="w-full h-64 object-cover">
+        bookCard.innerHTML = `
+          <img src="${coverUrl}" alt="${book.title}" class="w-full h-64 object-cover">
           <div class="p-4">
-            <h4 class="book-title font-bold text-lg mb-2">${book.title}</h4>
-            <p class="text-gray-600 mb-2 text-sm sm:text-base">by ${author}</p>
-            <p class="text-gray-500 mb-2 text-sm sm:text-base">📅 ${year}</p>
-            <div class="flex justify-between items-center">
-              <a href="https://openlibrary.org/search?q=${encodeURIComponent(book.title)}" target="_blank" class="text-green-600 hover:underline text-sm sm:text-base">Read more</a>
-              <button class="favorite-btn bg-red-500 text-white px-2 py-1 rounded hover:bg-red-400 transition text-sm">❤</button>
-            </div>
+            <h3 class="font-bold text-lg mb-2">${book.title}</h3>
+            <p class="text-gray-600 mb-2">${author}</p>
+            <button class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded w-full add-fav-btn">Add to Favorites</button>
           </div>
         `;
-        booksContainer.appendChild(card);
+
+        // Add to favorites button
+        bookCard.querySelector(".add-fav-btn").addEventListener("click", () => {
+          addToFavorites({
+            id: book.key,  // Unique Open Library key
+            title: book.title,
+            author: author,
+            cover: coverUrl
+          });
+        });
+
+        popularBooksSection.appendChild(bookCard);
       });
 
     } catch (error) {
-      console.error("Error fetching books:", error);
-      booksContainer.innerHTML = `<p class="col-span-full text-center text-red-500 text-xl">⚠️ Something went wrong. Try again.</p>`;
+      popularBooksSection.innerHTML = `<p class="text-center col-span-full text-red-500">Error fetching books: ${error.message}</p>`;
+      console.error(error);
     }
   }
+
+  // Initial fetch: show some popular books
+  fetchBooks("best sellers");
 
   // Search button click
   searchBtn.addEventListener("click", () => {
     const query = searchInput.value.trim();
-    if (query) {
-      fetchBooks(query);
-    } else {
-      booksContainer.innerHTML = `<p class="col-span-full text-center text-yellow-500 text-xl">Please enter a book name ✏️</p>`;
-    }
+    if (query) fetchBooks(query);
   });
 
-  // Enter key triggers search
+  // Enter key in input triggers search
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      searchBtn.click();
+      const query = searchInput.value.trim();
+      if (query) fetchBooks(query);
     }
   });
 });
-
-
-

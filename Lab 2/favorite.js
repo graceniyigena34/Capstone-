@@ -3,49 +3,9 @@
 
   
   const allBooks = [
-    {
-      title: "Introduction to Algorithms",
-      author: "Thomas H. Cormen et al.",
-      img: "https://covers.openlibrary.org/b/id/8306661-L.jpg",
-      link: "https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"
-    },
-    {
-      title: "Artificial Intelligence",
-      author: "Stuart Russell, Peter Norvig",
-      img: "https://covers.openlibrary.org/b/id/8271991-L.jpg",
-      link: "https://www.amazon.com/Artificial-Intelligence-Modern-Approach-4th/dp/0134610997"
-    },
-    {
-      title: "Python Crash Course",
-      author: "by Eric Matthes",
-      img: "https://covers.openlibrary.org/b/id/8254151-L.jpg",
-      link: "https://www.amazon.com/Python-Crash-Course-2nd-Edition/dp/1593279280"
-    },
-<<<<<<< Updated upstream
-    {
-      title: "Artificial Intelligence",
-      author: "Stuart Russell, Peter Norvig",
-      img: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
-      link: "#"
-    },
     
-    {
-      title: "Artificial Intelligence",
-      author: "Stuart Russell, Peter Norvig",
-      img: "https://covers.openlibrary.org/b/id/8271991-L.jpg",
-      link: "#"
-    },
-    {
-      title: "Artificial Intelligence",
-      author: "Stuart Russell, Peter Norvig",
-      img: "https://covers.openlibrary.org/b/id/8271991-L.jpg",
-      link: "#"
-    },
-=======
-   
     
-   
->>>>>>> Stashed changes
+  
 
   ];
 
